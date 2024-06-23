@@ -36,33 +36,7 @@ app.post("/api/receive-post", async (req, res) => {
       "dG9rOmIzNGMwODZiX2Y1NzlfNGU0Yl84NWEzX2M0M2Q1MDdhNmI3NToxOjA=";
     const intercomBaseUrl = "https://api.intercom.io";
 
-    // const email = "jacobpaul75608@gmail.com";
-
-    // try {
-    //   const response = await axios.post(
-    //     `${intercomBaseUrl}/contacts`,
-    //     {
-    //       email: email,
-    //     },
-    //     {
-    //       headers: {
-    //         Authorization: `Bearer ${intercomApiKey}`,
-    //         Accept: "application/json",
-    //         "Content-Type": "application/json",
-    //         "Intercom-Version": "2.11",
-    //       },
-    //     }
-    //   );
-
-    //   console.log("Contact created:", response.data);
-    //   // return response.data;
-    // } catch (error) {
-    //   console.error(
-    //     "Error creating contact:",
-    //     error.response ? error.response.data : error.message
-    //   );
-    //   throw error;
-    // }
+    
 
     const message = {
       body: `User has submitted a ${category}: Additional comments: ${comments}`,
@@ -87,7 +61,7 @@ app.post("/api/receive-post", async (req, res) => {
 
     console.log("Message sent to Intercom:", response.data);
 
-    // Optionally, you can send a response back to the client
+    
     res.status(200).send("Message sent to Intercom successfully.");
   } catch (error) {
     console.error("Error sending message to Intercom:", error.response.data);
